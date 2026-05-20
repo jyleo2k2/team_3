@@ -47,7 +47,3 @@ class OddEvenGame:
         
       
         return self.final_score
- 
-if __name__ == "__main__":
-    game = OddEvenGame()
-    game.start_game()
