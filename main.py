@@ -1,25 +1,21 @@
-# 이 파일이 메인 실행 파일입니다.
+from od_or_even import OddEvenGame 
 
-def one_number_only(prompt): # 지울거임
+score_records = []
+
+def main():
     while True:
-        num = input(prompt)
-        try:
-            num = int(num)
-            if num in [1,2,3,4,5]:
-                return num
-            print("1 ~ 5 까지의 숫자를 입력해주세요.")
-        except:
-            print("숫자를 입력해주세요.")
+        nickname = input("\n닉네임을 입력하세요 (종료하려면 'q' 입력): ")
+        if nickname == "q":
+            break
+            
+        game = OddEvenGame()
+        score = game.start_game()
+        
+        score_records.append({"name": nickname, "score": score})
+        
+        print("\n[기록 보드]")
+        for i, record in enumerate(score_records, 1):
+            print(f"{i}번: {record['name']} {record['score']}점")
 
-while True:
-    num = one_number_only("1 : 10초 맞추기\n2 : 커스텀 숫자야구\n3 : 홀짝\n4 : 랭킹 보기\n5 : 게임 종료")
-    if num == 1:
-        pass
-    elif num == 2:
-        pass
-    elif num == 3:
-        pass
-    elif num == 4:
-        pass
-    elif num == 5:
-        break
+if __name__ == "__main__":
+    main()
