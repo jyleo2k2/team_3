@@ -42,7 +42,7 @@ class App:
                 total_score = int(sum(score_lst) / 3)
                 print(f"총 점수 : {total_score}")
 
-                name = input("닉네임을 입력해주세요 : ")
+                name = input("\n닉네임을 입력해주세요 : \n")
                 self.ranking_append(name,total_score)
 
             elif num == 2:
@@ -51,7 +51,7 @@ class App:
                 if self.ranking_lst:
                     self.ranking_lst.sort(key=lambda x: -x[1])
                     for i in range(min(3,len(self.ranking_lst))):
-                        print(f"{i+1}위 : {self.ranking_lst[0]}, {self.ranking_lst[1]}")
+                        print(f"{i+1}위 : {self.ranking_lst[i][0]}, {self.ranking_lst[i][1]}")
                 else:
                     print("기록이 없습니다.\n")
                 
