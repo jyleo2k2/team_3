@@ -15,7 +15,7 @@ while True:
         start_game(scores)
 
     elif x == 2:
-        show_score(scores)
+        print(show_score(scores))
 
     elif x == 3:
         print("게임을 종료합니다.")
