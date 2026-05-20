@@ -25,11 +25,12 @@ class NumberBaseball:
                 elif my_answer[i] == self.correct_answer [i]:
                     strike += 1
                     hidden_answer[i] = my_answer[i]
-                else:
-                    out += 1
+                elif str(my_answer) not in str(self.correct_answer):
+                    out+=1
             print(f"{my_answer} : {strike}S,{ball}B,{out}O")
             if strike == 4 :
                 print("★ ★ ★")
                 print("성공!")
                 score=10*(11-count)
                 return score
+            
