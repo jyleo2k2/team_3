@@ -4,7 +4,7 @@ class TenSeconds:
     
     def start_game(self):
 
-        print("\n=== 10초 맞추기 게임 ===")
+        print("\n==== 1. 10초 맞추기 게임 ====")
         input("시작하려면 Enter를 누르세요!")
 
         start = time.time()
@@ -16,7 +16,7 @@ class TenSeconds:
         result = end - start
         difference = abs(10 - result)
 
-        score = 100 - int(difference * 10)
+        score = 100 - int(difference * 50)
 
         print("\n당신의 기록 :", round(result, 2), "초")
         print("10초와의 차이 :", round(difference, 2), "초")

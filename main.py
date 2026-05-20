@@ -12,7 +12,7 @@ class App:
     def __init__(self):
         self.ranking_lst = []
 
-    def _one_number_only(prompt):
+    def _one_number_only(self, prompt):
         while True:
             num = input(prompt)
             try:
@@ -27,8 +27,6 @@ class App:
         self.ranking_lst.append([name,total_score])
 
     def run(self):
-
-        
         
         while True:
             print("당신의 운을 시험해보세요..!!")
@@ -39,7 +37,7 @@ class App:
                 total_score = 0
 
                 score_lst.append(Game_1.start_game())
-                score_lst.append(Game_2.play())
+                score_lst.append(Game_2.start_game())
                 score_lst.append(Game_3.start_game())
                 total_score = int(sum(score_lst) / 3)
                 print(f"총 점수 : {total_score}")
@@ -55,9 +53,12 @@ class App:
                     for i in range(min(3,len(self.ranking_lst))):
                         print(f"{i+1}위 : {self.ranking_lst[0]}, {self.ranking_lst[1]}")
                 else:
-                    print("기록이 없습니다.")
+                    print("기록이 없습니다.\n")
                 
             elif num == 3:
                 break
             else:
                 print("1부터 3까지의 숫자를 입력해주세요...")
+
+app = App()
+app.run()

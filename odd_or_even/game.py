@@ -8,6 +8,7 @@ class OddEvenGame:
 
     def start_game(self):
 
+        print("\n==== 3. 10연속 홀짝 ====")
        
         self.total_rounds = 10
         print(" 홀짝 게임을 시작합니다.")

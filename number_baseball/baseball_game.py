@@ -1,58 +1,36 @@
 import random
 class NumberBaseball:
-    def __init__(self,start=0,end=1000):
-        self.answer = random.randint(start,end)
-        self.guess=["_"]*len(self.answer)
-        self.tries=0
+    def __init__(self):
+        self.challenge =[]
+        self.correct_answer = str(random.randint(1000,9999))
 
-
-    def input_number(self):
+    def start_game(self):
+        print("\n==== 2. 네자리 숫자 야구 ====")
+        count = 0
+        hidden_answer = ["_"] * len(self.correct_answer)
+        print("["," ".join(hidden_answer),"]")
         while True:
-            while True:
-                try:
-                    number = int(input("네 자리 숫자를 입력하세요: "))
-                    if number <1000:
-                        print("숫자가 네자리 숫자가 아닙니다.")
-                    return number
-                except ValueError:
-                    print("숫자만 입력해주세요.")
-
-    def play(self):
-        guess_list=[]
-        while True:
-            if "_" not in self.guess:
-                print("승리하셨습니다.")
-                score= 10*(11-self.tries)
+            ball = 0
+            strike = 0
+            out = 0 
+            my_answer = input("네자리 숫자를 입력하세요 : ")
+            count += 1
+            if my_answer in self.challenge:
+                print("이미 입력했던 글자입니다.")
+                count -= 1
+                continue  
+            self.challenge.append(my_answer)
+            for i in range (len(self.correct_answer)):
+                if my_answer[i] != self.correct_answer[i] and my_answer[i] in self.correct_answer:
+                    ball += 1
+                elif my_answer[i] == self.correct_answer [i]:
+                    strike += 1
+                    hidden_answer[i] = my_answer[i]
+                else:
+                    out += 1
+            print(f"{my_answer} : {strike}S,{ball}B,{out}O")
+            if strike == 4 :
+                print("★ ★ ★")
+                print("성공!")
+                score=10*(11-count)
                 return score
-                
-
-            print("현재 상태:", ' '.join(self.guess))
-
-            if len(guess_list) ==0:
-                print("입력한 글자가 없습니다.")
-
-            else:
-                print("입력한 글자:", ' '.join(guess_list))
-
-            guess_number=self.input_number()
-            guess_list.append(guess_number)
-            
-            if len(guess_number)==4:
-                self.tries+=1
-                strike=0
-                ball=0
-                for i in range (len(self.answer)):
-                    if self.answer[i] == guess_number:
-                        self.answer[i]==guess_number
-                if str(guess_number) not in str(self.answer):
-                    print("O")
-                for i in range(len(self.answer)):
-                    if guess_number[i]==self.answer[i]:
-                        strike+=1
-                    elif guess_number[i] in self.answer:
-                        ball+=1
-                print(f"{strike}S{ball}B")
-
-
-            
-
