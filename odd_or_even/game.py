@@ -21,7 +21,7 @@ class OddEvenGame:
             computer_num = random.randint(1, 100)
             computer_answer = "홀" if computer_num % 2 != 0 else "짝"
             while True:
-                user_guess = input("홀? 또는 짝? 입력하세요: ").strip() # strip()은 앞뒤 공백 제거
+                user_guess = input("홀? 또는 짝? 입력하세요: ").strip()
                 
                 if user_guess == "홀" or user_guess == "짝":
                     break
