@@ -1,9 +1,9 @@
 
 import random
 class NumberBaseball:
-    def __init__(self,start,end):
-        self.answer = random.randint(start,end)
-        self.guess=["_"]*len(self.answer)
+    def __init__(self):
+        self.answer = random.sample(range(0, 10), 4)
+        self.history = []
         self.tries=0
 
 
@@ -12,7 +12,7 @@ class NumberBaseball:
             while True:
                 try:
                     number = int(input("네 자리 숫자를 입력하세요: "))
-                    if number <1000:
+                    if len(number)!=4:
                         print("숫자가 네자리 숫자가 아닙니다.")
                     return number
                 except ValueError:
