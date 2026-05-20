@@ -1,0 +1,40 @@
+{
+	"folders": [
+		{
+			"path": "../.git"
+		},
+		{
+			"path": "../.vscode"
+		},
+		{
+			"path": "../260511"
+		},
+		{
+			"path": "../atest"
+		},
+		{
+			"path": "../data"
+		},
+		{
+			"path": "../down_project"
+		},
+		{
+			"path": "../logs"
+		},
+		{
+			"path": "../up and down_ project"
+		},
+		{
+			"path": "../가위바위보+묵찌빠_project"
+		},
+		{
+			"path": "../개념실습"
+		},
+		{
+			"path": "../라이브러리"
+		},
+		{
+			"path": "../행맨게임.py"
+		}
+	]
+}
