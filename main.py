@@ -4,15 +4,15 @@ from ten_seconds.game import TenSeconds
 from odd_or_even.game import OddEvenGame
 from number_baseball.baseball_game import NumberBaseball
 
-Game_1 = TenSeconds()
-Game_2 = NumberBaseball()
-Game_3 = OddEvenGame()
+Game_1 = TenSeconds() # 10초게임
+Game_2 = NumberBaseball() # 중복 4자리 숫자야구
+Game_3 = OddEvenGame() # 홀짝
 
 class App:
     def __init__(self):
-        self.ranking_lst = []
+        self.ranking_lst = [] # 랭킹 저장 리스트
 
-    def _one_number_only(self, prompt):
+    def _one_number_only(self, prompt): # 숫자 입력만
         while True:
             num = input(prompt)
             try:
@@ -24,7 +24,7 @@ class App:
                 print("숫자를 입력해주세요.")
 
     def ranking_append(self,name,total_score):
-        self.ranking_lst.append([name,total_score])
+        self.ranking_lst.append([name,total_score]) # [이름,점수] 순으로 저장
 
     def run(self):
         
@@ -39,7 +39,7 @@ class App:
                 score_lst.append(Game_1.start_game())
                 score_lst.append(Game_2.start_game())
                 score_lst.append(Game_3.start_game())
-                total_score = int(sum(score_lst) / 3)
+                total_score = int(sum(score_lst) / 3) # 100점 만점으로 계산
                 print(f"총 점수 : {total_score}")
 
                 name = input("\n닉네임을 입력해주세요 : \n")
